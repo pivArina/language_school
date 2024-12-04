@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Отзывы</h1></header>
+        <div id="reviews-container">
+            <% reviews.forEach(review => { %>
+                <div class="review">
+                    <h3><%= review.name %></h3>
+                    <p><%= review.message %></p>
+                </div>
+            <% }); %>
+        </div>
+        <form id="review-form" method="POST" action="/reviews">
+            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            <textarea id="message" name="message" placeholder="Ваш отзыв" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

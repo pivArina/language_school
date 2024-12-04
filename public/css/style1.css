@@ -1,0 +1,151 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 45px;
+    background-color: #303030;
+}
+
+.title-container {
+    height: 35px;
+    background-color: gold;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 0px;
+    margin: 0 auto;
+    font-size: 25px;
+    font-family: 'Bradley Hand', cursive;
+    margin-bottom: 40px;
+}
+
+header {
+    margin: 0;
+    color: black;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.menu-link {
+
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 0px;
+    
+}
+#about {
+    text-align: left; 
+    max-width: 540px; 
+    margin: 0; 
+    padding: 100px; 
+    position: relative;
+    padding-left: 140px;
+    font-family: 'Bradley Hand', cursive;
+    
+}
+
+#about:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: gold;
+    left: 0;
+    top: 125px;
+}
+
+#teachers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px; 
+}
+
+.teacher {
+    width: 300px; 
+    padding: 20px; 
+    background-image: url('../res/фон.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px; 
+    text-align: center; 
+    color: black;
+    font-family: 'Bradley Hand', cursive;
+}
+
+.teacher img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+}
+
+.teacher h3 {
+    margin-top: 10px; 
+    
+}
+
+.teacher p {
+    font-size: 14px; 
+    line-height: 1.6; 
+}
+
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #303030;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+#services {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    font-family: 'Bradley Hand', cursive;
+}
+
+#services h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+#services ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#services li {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#services p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}

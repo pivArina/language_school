@@ -1,0 +1,581 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+.header_top {
+    background-color: #303030;
+}
+
+.heade_btn {
+    float: right;
+    line-height: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #1b1b1b;
+    background-color: gold;
+    padding: 5px 20px 4px 50px;
+    font-size: 16px;
+    position: relative;
+}
+
+.heade_btn:before {
+    content: "\e970";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 22px;
+    color: rgb(0, 0, 0);
+}
+
+.header_contacts:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.welcome{
+    color: aliceblue;
+    text-shadow:1px 1px 2px gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+    margin-left: 110px;
+    background: none;
+    border: none;
+}
+
+.heade_phon,
+.heade_mail {
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+    position: relative;
+}
+
+.heade_phon {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.heade_phon:before {
+    content: "\e942";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: gold;
+}
+
+.heade_mail {
+    padding-left: 24px;
+}
+
+.heade_mail:before {
+    content: "\ea86";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: gold;
+}
+
+.header_content {
+    padding: 34px 0px 24px;
+}
+
+.header_content-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    line-height: 36px;
+    border: 1px solid gold;
+    padding: 0px 16px;
+}
+
+.menu li+li {
+    padding: 10px;
+}
+
+#modal {
+    display: none;
+}
+
+.slider {
+    background-image: url('../res/school2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+.slider_item-content {
+    text-align: center;
+    padding-top: 110px;
+    max-width: 665px;
+    margin: 0 auto;
+}
+
+.slider_title {
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 36px;
+    color: aliceblue;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+    font-family: 'Bradley Hand', cursive;
+}
+
+.slider_text {
+    color: gold;
+    line-height: 24px;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.slider_btn {
+    display: inline-block;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    padding: 8px 30px 8px 24px;
+    border: 1px solid gold;
+    border-right-width: 20px;
+}
+
+.default-btn {
+    display: inline-block;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 8px 30px 8px 24px;
+    border: 1px solid gold;
+    border-right-width: 20px;
+    position: relative;
+}
+
+.default-btn:after {
+    content: "\ea04";
+    font-family: 'icomoon';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -17px;
+}
+
+.slider_iner {
+    position: relative;
+}
+
+.slick-btn {
+    position: absolute;
+    top: 70%;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border: 1px solid gold;
+    background-color: transparent;
+
+}
+
+.slick-btn:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: aliceblue;
+}
+
+.slick-next:before {
+    content: "\ea04";
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-prev::before {
+    content: "\ea06";
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.services {
+    padding: 50px 0px 30px;
+}
+
+.services_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.services_title-box,
+.form_title-box {
+    max-width: 520px;
+    padding-left: 140px;
+    position: relative;
+
+}
+
+.services_title-box:before,
+.form_title-box:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: gold;
+    left: 0;
+    top: 11px;
+}
+
+.services-title,
+.form-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.services-text,
+.form-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+}
+
+.services_btn a {
+    color: black;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    padding: 5px 38px;
+    border: 3px solid #e6e6e6;
+}
+
+.services_items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services_item {
+    min-width: 360px;
+    text-align: center;
+    background-image: url('../res/фон.jpg');
+    box-shadow: 0px 7px 24.3px #5e5e5e;
+    padding: 30px 0px 80px;
+    position: relative;
+    min-height: 350px;
+    margin-right: 35px;
+    background-size: cover;
+}
+
+.services_item-title {
+    color: black;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 24px 0;
+}
+
+.services_item-text {
+    color: black;
+    letter-spacing: 0.1px;
+    padding: 0px 30px 30px;
+    font-family: 'Bradley Hand', cursive;
+}
+
+.services_item-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+}
+
+.services_item-btn .default-btn {
+    color: black;
+}
+
+.services_item-link {
+    color: black;
+    border-bottom: 1px solid black;
+    margin-right: 60px;
+}
+
+.about {
+    background-image: url('../res/about3.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+    background-repeat: no-repeat;
+    padding: 25px 0px 45px;
+}
+
+.about_inner {
+    max-width: 540px;
+}
+
+.about_title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 26px;
+    line-height: 24px;
+    padding: 10px 0px 25px;
+    font-weight: 520;
+}
+
+.about_text {
+    font-family: 'Bradley Hand', cursive;
+    font-size: 15px;
+    color: black;
+    letter-spacing: 0.1px;
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+
+.about_btn {
+    color: black;
+}
+
+.form {
+    padding-top: 30px;
+}
+
+.form_inner {
+    padding-bottom: 40px;
+    background-image: url('../res/tel4.jpg');
+    min-height: 460px;
+    background-repeat: no-repeat;
+    background-position: bottom right -200px;
+}
+
+.form_box {
+    max-width: 850px;
+    padding-top: 45px;
+}
+
+.form_box-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_box-left {
+    max-width: 260px;
+    width: 100%;
+}
+
+.form_box-right {
+    max-width: 555px;
+    width: 100%;
+
+}
+
+.form_box-inner label,
+.form_box-inner input,
+.form_box-inner textarea,
+.form_box-inner select {
+    display: block;
+    width: 100%;
+}
+
+.form_box-inner label {
+    line-height: 36px;
+    font-family: 'Bradley Hand', cursive;
+    color: black;
+}
+
+.form_box-inner input {
+    margin-bottom: 8px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #5e5e5e;
+    padding: 0px 10px;
+}
+
+.form_box-inner select {
+    outline: none;
+    height: 40px;
+    border: 1px solid #5e5e5e;
+    padding-left: 17px;
+}
+
+.form_box-inner textarea {
+    outline: none;
+    border: 1px solid #5e5e5e;
+    padding: 10px;
+    height: 207px;
+    resize: none;
+    margin-bottom: 45px;
+}
+
+.form_box-inner button {
+    background-color: transparent;
+    color: black;
+}
+
+.footer_content {
+    background-image: url('../res/фон.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0px 30px;
+}
+
+.footer_inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_map {
+    padding-top: 10px;
+}
+
+/*.footer_map iframe {
+    max-width: 630px;
+    height: 250px;
+    width: 100%;
+}*/
+.footer_title{
+    color: black;
+    font-size: 16px;
+    font-weight:500;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+}
+.footer_text{
+    font-family: 'Bradley Hand', cursive;
+    color: black;
+    margin-bottom: 20px;
+}
+.footer_info{
+   max-width: 360px; 
+}
+.footer_list li{
+  margin-top: 10px;
+}
+.footer_list a{
+    color: black;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    padding-left: 33px;
+    position: relative;
+}
+.footer_list a:before{
+    content: "\ea86";
+    position: absolute;
+    left: 0;
+    color:goldenrod;
+    font-family: 'icomoon';
+}
+.footer_list .footer_tel:before{
+    content: "\e942";
+    
+}
+.footer_list .footer_adres:before{
+    content: "\f278";
+    
+}
+#modal{
+    width: 300px;
+}
+#modal input{
+ display: block;
+ width: 100%;
+ margin-bottom: 20px;
+ outline: none;
+ height: 40px;
+ border: 1px solid #5e5e5e;
+ padding: 0px 10px;
+}
+#modal input[type="submit"]{
+ background-color: gold;
+ border: none;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+.form-container .btn {
+    background-color: gold;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+.form-container .cancel {
+    background-color: #5e5e5e;
+  }
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  #dashboardLink {
+    display: none; /* Скрыть ссылку по умолчанию */
+}

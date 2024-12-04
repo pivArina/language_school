@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание занятий</title>
+    <style>
+        body {
+            background-image: url('../res/about2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        menu {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            border-color: #f9f9f9;
+        }
+
+        header {
+            background-color: gold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background-color: #f9f9f9;
+        }
+
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: gold;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Расписание занятий</h1>
+        </header>
+        <form action="/add-schedule" method="post">
+            <label for="time">Время:</label>
+            <input type="text" id="time" name="time" required>
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="teacher">Преподаватель:</label>
+            <input type="text" id="teacher" name="teacher" required>
+            <input type="submit" value="Добавить">
+        </form>
+        <ul>
+            <menu>
+                <% timetable.forEach(item=> { %>
+                    <li>
+                        <strong>Время:</strong>
+                        <%= item.time %><br>
+                        <strong>Дата:</strong>
+                        <%= item.date %><br>
+                        <strong>Преподаватель:</strong>
+                        <%= item.teacher %>
+                        <form action="/delete-schedule" method="post">
+                            <input type="hidden" name="time" value="<%= item.time %>">
+                            <input type="hidden" name="date" value="<%= item.date %>">
+                            <button type="submit">Удалить</button>
+                        </form>
+                    </li>
+                <% }); %>
+            </menu>
+        </ul>
+    </div>
+</body>
+
+</html>

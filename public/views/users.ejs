@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../res/users.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: gold;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background-color: #e6e6e6;
+        }
+
+        li form {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Пользователи</h1>
+        </header>
+        <form action="/add-user" method="post">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="role">Роль:</label>
+            <input type="text" id="role" name="role" required><br>
+            <button type="submit">Добавить пользователя</button>
+        </form>
+
+        <ul>
+            <% users.forEach(user=> { %>
+                <li>
+                    <strong>Имя:</strong>
+                    <%= user.username %><br>
+                        <strong>E-mail:</strong>
+                        <%= user.email %><br>
+                            <strong>Роль:</strong>
+                            <%= user.role %><br>
+                                
+                                <form action="/delete-user" method="post">
+                                    <input type="hidden" name="email" value="<%= user.email %>">
+                                    <button type="submit">Удалить</button>
+                                </form>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+</body>
+
+</html>

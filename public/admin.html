@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tmw_school</title>
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+</head>
+
+<body>
+    <header class="header" id="start">
+        <div class="header_top">
+            <div class="container">
+                <div class="header_contacts">
+                    <a class="heade_phon" href="#">+375-33-111-11-11</a>
+                    <a class="heade_mail" href="#">@tmw_school</a>
+                    <a class="heade_btn" href="#f">Задачи администратора</a>
+                </div>
+            </div>
+        </div>
+        <div class="header_content">
+            <div class="container">
+                <div class="header_content-inner">
+                    <div class="header_logo">
+                        <a href="#"></a>
+                        <img src="./res/logo.png" style="height: 50px; ">
+                    </div>
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="/reviews">Отзывы</a></li>
+                            <li><a href="/consultation">Данные из формы констультации</a></li>
+                            <li><a href="/orders">Заказы</a></li>
+                            <li><a href="/timetable_admin">Расписание</a></li>
+                            <li><a href="/users">Пользователи</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="slider">
+    </section>
+    <section class="services" id="services">
+
+        <div class="container">
+            <div class="services_top">
+                <div class="services_title-box">
+                    <div class="services-title">Предоставляемые услуги
+                    </div>
+                    <div class="services-text">Дорогие администратора убидетильная просьба перед записью клиента
+                        подчеркните особенности и преимущества ваших услуг, объясните различные формы обучения,
+                        расскажите о дополнительных услугах и поделитесь отзывами предыдущих клиентов!</div>
+                </div>
+            </div>
+            <div class="services_items">
+                <div class="services_item">
+                    <img src="./res/1.jpg.webp" style="height: 75px;width: 75px;opacity:0.5;">
+                    <div class="services_item-title">Индивидуальные занятия</div>
+                    <div class="services_item-text">Наши опытные преподаватели разработают уникальные программы
+                        обучения,
+                        учитывая ваши цели и уровень владения языком.
+                    </div>
+                </div>
+                <div class="services_item">
+                    <img src="./res/2.jpg.webp" style="height: 75px;width: 75px;opacity:0.5;">
+                    <div class="services_item-title">Групповые занятия</div>
+                    <div class="services_item-text">Обучение в дружной атмосфере, где вы сможете обмениваться опытом с
+                        одноклассниками,
+                        развивая навыки общения на выбранном языке.
+                    </div>
+                </div>
+                <div class="services_item">
+                    <img src="./res/3.jpg.webp" style="height: 75px;width: 75px;opacity:0.5;">
+                    <div class="services_item-title">Интенсивные курсы</div>
+                    <div class="services_item-text">Быстрый и эффективный способ погрузиться в изучение языка,
+                        идеальный для тех, кто стремится быстро достичь результатов.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about_us">
+        <div class="container">
+            <div class="about_inner">
+                <div class="about_title">Информация о школе</div>
+                <div class="about_text">Дорогие администраторы,
+                    Позвольте предложить вам некоторую рекомендованную информацию, которую стоит передавать
+                    пользователям о наших услугах.
+                    В нашей школе вы найдете опытных преподавателей, готовых поддержать
+                    вас на каждом этапе языкового пути.
+                    Мы предоставляем гибкие программы обучения, сочетающие в себе традиционные методы и инновационные
+                    подходы, чтобы сделать ваше обучение интересным и эффективным.
+                    Вместе мы создаем образовательное пространство, где слова становятся мостами между людьми и миром.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="form" id="f">
+        <div class="container">
+            <div class="form_inner">
+                <div class="form_content">
+                    <div class="form_title-box">
+                        <div class="form-title">Задачи администратора
+                        </div>
+                        <div class="form-text">
+                            1. Управление учебным процессом:
+                            Добавление актуального расписания занятий.
+                            Назначение преподавателей на определенные занятия.
+                            2.Управление пользователями:
+                            Добавление и удаление аккаунтов пользователй, администраторов и других
+                            сотрудников школы.
+                            Управление правами доступа пользователей к различным функциям системы.
+                            3.Взаимодействие с клиентами:
+                            Проведение консультаций для потенциальных студентов.
+                            Организация мероприятий и акций для привлечения новых клиентов.
+                            Работа с обратной связью от студентов и решение возникающих проблем.
+                            4.Обеспечение безопасности и конфиденциальности данных:
+                            Защита информации о студентах, преподавателях и сотрудниках школы.
+                            Внедрение и соблюдение стандартов безопасности информации.
+                        </div>
+                    </div>
+    </section>
+    <footer class="footer" id="map">
+        <div class="footer_content">
+            <div class="container">
+                <div class="footer_inner">
+                    <div class="footer_info">
+                        <div class="footer_title">Где нас найти</div>
+                        <div class="footer_text">Наша школа иностранных языков удобно расположена в самом сердце города,
+                            всего в нескольких минутах ходьбы от центральной площади. </div>
+
+                        <ul class="footer_list">
+                            <li><a class="footer_tel" href="#">+375-33-111-11-11</a></li>
+                            <li><a href="#">@tmw_school</a></li>
+                            <li><a class="footer_adres" href="#">Набережная 40А</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_map">
+                        <iframe width="630px" height="250px"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.4936562757252!2d30.393983200000015!3d52.37051519999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d4300b56acdbb3%3A0x294429a33e6db065!2z0YPQuy4g0J3QsNCx0LXRgNC10LbQvdCw0Y8gNDAsINCg0LXRh9C40YbQsCwg0JPQvtC80LXQu9GM0YHQutCw0Y8g0L7QsdC70LDRgdGC0Yw!5e1!3m2!1sru!2sby!4v1710341353308!5m2!1sru!2sby"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <div id="modal">
+        <form>
+            <input type="text" placeholder="Ваше имя">
+            <input type="text" placeholder="Ваш телефон">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+    <div class="form-popup" id="myForm">
+        <form class="form-container" action="/auth" method="post">
+            <h1>Регистрация</h1>
+            <label for="username"><b>Имя</b></label>
+            <input type="text" placeholder="Введите ваше имя" name="username" required>
+
+            <label for="email"><b>Электронная почта</b></label>
+            <input type="text" placeholder="Введите электронную почту" name="email" required>
+
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" required>
+            <input type="hidden" name="action" value="register"> <!-- Для регистрации -->
+            <button type="submit" class="btn">Войти</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+        </form>
+    </div>
+    <div class="form-popup" id="myForm2">
+        <form class="form-container" action="/auth" method="post">
+            <h1>Авторизация</h1>
+            <label for="username"><b>Имя</b></label>
+            <input type="text" placeholder="Введите ваше имя" name="username" required>
+
+            <label for="email"><b>Электронная почта</b></label>
+            <input type="text" placeholder="Введите электронную почту" name="email" required>
+
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" required>
+            <input type="hidden" name="action" value="login"> <!-- Для аутентификации -->
+            <button type="submit" class="btn">Войти</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">Закрыть</button>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../server.js"></script>
+    <script src="./js/jquery.fancybox.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/avtor_reg.js"></script>
+
+</body>
+
+</html>

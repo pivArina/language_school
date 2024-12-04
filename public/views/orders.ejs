@@ -1,0 +1,210 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы</title>
+    <style>
+        body {
+            background-image: url('../res/cons.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li strong {
+            color: #333;
+        }
+
+
+        li {
+            border-left: 5px solid gold;
+        }
+
+        li:hover {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Заказы</h1>
+        </header>
+        <ul>
+            <% orders.forEach(order=> { %>
+                <li>
+                    <strong>Имя:</strong>
+                    <%= order.name %><br>
+                        <strong>Телефон:</strong>
+                        <%= order.phone %><br>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+</body>
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы</title>
+    <style>
+        body {
+            background-image: url('../res/cons.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        li strong {
+            color: #333;
+        }
+
+        li {
+            border-left: 5px solid gold;
+        }
+
+        li:hover {
+            background-color: gold;
+        }
+
+        .process-button,
+        .delete-button {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .delete-button {
+            background-color: red;
+        }
+
+        .status-icon {
+            position: absolute;
+            top: 10px;
+            right: 100px;
+            font-size: 24px;
+            color: green;
+            display: none;
+        }
+
+        form {
+            display: inline;
+        }
+
+        button[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Заказы</h1>
+        </header>
+        <ul>
+            <% orders.forEach(order => { %>
+                <li>
+                    <strong>Имя:</strong>
+                    <%= order.name %><br>
+                    <strong>Телефон:</strong>
+                    <%= order.phone %><br>
+                    <button class="process-button">Обработано</button>
+                    <form action="/delete-order" method="post">
+                        <input type="hidden" name="name" value="<%= order.name %>">
+                        <input type="hidden" name="phone" value="<%= order.phone %>">
+                        <button type="submit" class="delete-button">Удалить</button>
+                    </form>
+                    <span class="status-icon">&#x2714;</span>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelectorAll('.process-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const statusIcon = this.nextElementSibling.nextElementSibling;
+                statusIcon.style.display = 'inline';
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

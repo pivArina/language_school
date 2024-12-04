@@ -1,0 +1,211 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данные о консультации</title>
+    <style>
+body{
+    background-image: url('../res/cons.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li strong {
+    color: #333; 
+}
+
+
+li {
+    border-left: 5px solid gold; 
+}
+
+li:hover {
+    background-color:gold;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Данные о бесплатной консультации</h1>
+        </header>
+        <ul>
+            <% consultations.forEach(consultation => { %>
+                <li>
+                    <strong>E-mail:</strong> <%= consultation.email %><br>
+                    <strong>Телефон:</strong> <%= consultation.phone %><br>
+                    <strong>Имя:</strong> <%= consultation.full_name %><br>
+                    <strong>Тема:</strong> <%= consultation.topic %><br>
+                    <strong>Сообщение:</strong> <%= consultation.message %>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данные о консультации</title>
+    <style>
+        body {
+            background-image: url('../res/cons.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        li strong {
+            color: #333;
+        }
+
+        li {
+            border-left: 5px solid gold;
+        }
+
+        li:hover {
+            background-color: gold;
+        }
+
+        .status-processed {
+            font-size: 24px;
+            color: green;
+            display: none;
+        }
+
+        .process-button {
+            position: absolute;
+            top: 20px;
+            right: 100px;
+            padding: 5px 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Данные о бесплатной консультации</h1>
+        </header>
+        <ul>
+            <% consultations.forEach(consultation => { %>
+                <li>
+                    <strong>E-mail:</strong> <%= consultation.email %><br>
+                    <strong>Телефон:</strong> <%= consultation.phone %><br>
+                    <strong>Имя:</strong> <%= consultation.full_name %><br>
+                    <strong>Тема:</strong> <%= consultation.topic %><br>
+                    <strong>Сообщение:</strong> <%= consultation.message %>
+                    <span class="status-processed">&#x2714;</span>
+                    <button class="process-button">Обработана</button>
+                    <form action="/delete-consultation" method="POST" class="delete-form" style="display:inline;">
+                        <input type="hidden" name="email" value="<%= consultation.email %>">
+                        <input type="hidden" name="full_name" value="<%= consultation.full_name %>">
+                        <button type="submit" class="delete-button">Удалить</button>
+                    </form>                    
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelectorAll('.process-button').forEach(button => {
+            button.addEventListener('click', function () {
+                this.previousElementSibling.style.display = 'inline';
+                this.style.display = 'none';
+            });
+        });
+
+        document.querySelectorAll('.delete-form').forEach(form => {
+            form.addEventListener('submit', function (event) {
+                if (!confirm('Вы уверены, что хотите удалить эту консультацию?')) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

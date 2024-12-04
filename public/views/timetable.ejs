@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание занятий</title>
+    <style>
+        body{
+            background-image: url('../res/about2.jpg'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        menu {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            border-color: #f9f9f9;
+        }
+
+        header {
+            background-color: gold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Расписание занятий</h1>
+        </header>
+        <ul>
+            <menu>
+                <% timetable.forEach(item=> { %>
+                    <li>
+                        <strong>Время:</strong>
+                        <%= item.time %><br>
+                            <strong>Дата:</strong>
+                            <%= item.date %><br>
+                                <strong>Преподаватель:</strong>
+                                <%= item.teacher %>
+                    </li>
+                    <% }); %>
+            </menu>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tmw_school</title>
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+</head>
+
+<body>
+    <header class="header" id="start">
+        <div class="header_top">
+            <div class="container">
+                <div class="header_contacts">
+                    <a class="heade_phon" href="#">+375-33-111-11-11</a>
+                    <a class="heade_mail" href="#">@tmw_school</a>
+                    <button class="heade_reg" onclick="openForm()">Регистрация</button>
+                    <button class="heade_avtor" onclick="openForm2()">Авторизация</button>
+                    <a class="heade_btn" href="#f">Бесплатная
+                        консультация</a>
+                </div>
+            </div>
+        </div>
+        <div class="header_content">
+            <div class="container">
+                <div class="header_content-inner">
+                    <div class="header_logo">
+                        <a href="#"></a>
+                        <img src="./res/logo.png" style="height: 50px; ">
+                    </div>
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="#start">Главная</a></li>
+                            <li><a href="#about_us">О школе</a></li>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#map">Где находимся</a></li>
+                            <li><a href="/dashboard" id="dashboardLink">Расписание</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="slider">
+        <div class="container">
+            <div class="slider_iner">
+                <div class="slider_item">
+                    <div class="slider_item-content">
+                        <div class="slider_title">
+                            THE MANY-VOICED WORLD
+                        </div>
+                        <div class="slider_text">
+                            "The Many-Voiced World" - это уникальная школа иностранных языков, где мы с гордостью
+                            объединяем людей со всего мира в языковом космополите.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
+                <div class="slider_item">
+                    <div class="slider_item-content">
+                        <div class="slider_title">
+                            THE MANY-VOICED WORLD
+                        </div>
+                        <div class="slider_text">
+                            Наша миссия заключается в расширении горизонтов и
+                            обогащения культурного понимания.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
+                <div class="slider_item">
+                    <div class="slider_item-content">
+                        <div class="slider_title">
+                            THE MANY-VOICED WORLD
+                        </div>
+                        <div class="slider_text">
+                            Мы верим в силу разнообразия языков и культур,
+                            поэтому предлагаем курсы на самых разных языках мира.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+
+        <div class="container">
+            <div class="services_top">
+                <div class="services_title-box">
+                    <div class="services-title">Наши услуги
+                    </div>
+                    <div class="services-text">Вы окунётесь в мир языкового разнообразия, расширите свои горизонты и
+                        достигните новых вершин в своем лингвистическом путешествии!</div>
+                </div>
+            </div>
+            <div class="services_items">
+                <div class="services_item">
+                    <img src="./res/1.jpg.webp" style="height: 75px;width: 75px;opacity:0.5;">
+                    <div class="services_item-title">Индивидуальные занятия</div>
+                    <div class="services_item-text">Наши опытные преподаватели разработают уникальные программы
+                        обучения,
+                        учитывая ваши цели и уровень владения языком.
+                    </div>
+                    <div class="services_item-btn">
+                        <a class="services_item-link" href="./index1.html">Подробнее</a>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Заказать
+                        </a>
+                    </div>
+                </div>
+                <div class="services_item">
+                    <img src="./res/2.jpg.webp" style="height: 75px;width: 75px;opacity:0.5;">
+                    <div class="services_item-title">Групповые занятия</div>
+                    <div class="services_item-text">Обучение в дружной атмосфере, где вы сможете обмениваться опытом с
+                        одноклассниками,
+                        развивая навыки общения на выбранном языке.
+                    </div>
+                    <div class="services_item-btn">
+                        <a class="services_item-link" href="./index1.html">Подробнее</a>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Заказать
+                        </a>
+                    </div>
+                </div>
+                <div class="services_item">
+                    <img src="./res/3.jpg.webp" style="height: 75px;width: 75px;opacity:0.5;">
+                    <div class="services_item-title">Интенсивные курсы</div>
+                    <div class="services_item-text">Быстрый и эффективный способ погрузиться в изучение языка,
+                        идеальный для тех, кто стремится быстро достичь результатов.
+                    </div>
+                    <div class="services_item-btn">
+                        <a class="services_item-link" href="./index1.html">Подробнее</a>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Заказать
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about_us">
+        <div class="container">
+            <div class="about_inner">
+                <div class="about_title">О школе</div>
+                <div class="about_text">В нашей школе вы найдете опытных преподавателей, готовых поддержать вас на
+                    каждом этапе языкового пути.
+                    Мы предоставляем гибкие программы обучения, сочетающие в себе традиционные методы и инновационные
+                    подходы, чтобы сделать ваше обучение интересным и эффективным.
+                    Вместе мы создаем образовательное пространство, где слова становятся мостами между людьми и миром.
+                </div>
+                <a href="./index1.html" class="about_btn default-btn">
+                    Узнать больше
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="form" id="f">
+        <div class="container">
+            <div class="form_inner">
+                <div class="form_content">
+                    <div class="form_title-box">
+                        <div class="form-title">Получить консультацию
+                        </div>
+                        <div class="form-text">Комплексный подход к вашему вопросу, быстрый ответ.Наши опытные
+                            консультанты готовы поддержать
+                            вас в выборе наилучшего образовательного пути, рассказать о наших программах обучения и
+                            помочь
+                            определиться с индивидуальными целями. Заполните форму обратной связи, и мы свяжемся с вами
+                            в ближайшее
+                            время. Давайте вместе создадим ваш уникальный путь к успеху!</div>
+                    </div>
+                    <div class="form_box">
+                        <form action="/submit-form" method="POST">
+                            <div class="form_box-inner">
+                                <div class="form_box-left">
+                                    <label>
+                                        E-mail
+                                        <input type="email" name="email" required>
+                                    </label>
+                                    <label>
+                                        Контактный телефон
+                                        <input type="text" name="phone">
+                                    </label>
+                                    <label>
+                                        ФИО
+                                        <input type="text" name="full_name" required>
+                                    </label>
+                                    <label>
+                                        Тема вопроса
+                                        <select name="topic">
+                                            <option>Выбор языка</option>
+                                            <option>Планирование обучения</option>
+                                            <option>Подготовка к экзаменам</option>
+                                            <option>Иная тема</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="form_box-right">
+                                    <label>
+                                        Сообщение
+                                        <textarea name="message"></textarea>
+                                    </label>
+                                    <button class="default-btn" type="submit">Получить консультацию</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="map">
+        <div class="footer_content">
+            <div class="container">
+                <div class="footer_inner">
+                    <div class="footer_info">
+                        <div class="footer_title">Где нас найти</div>
+                        <div class="footer_text">Наша школа иностранных языков удобно расположена в самом сердце города,
+                            всего в нескольких минутах ходьбы от центральной площади. </div>
+
+                        <ul class="footer_list">
+                            <li><a class="footer_tel" href="#">+375-33-111-11-11</a></li>
+                            <li><a href="#">@tmw_school</a></li>
+                            <li><a class="footer_adres" href="#">Набережная 40А</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_map">
+                        <iframe width="630px" height="250px"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.4936562757252!2d30.393983200000015!3d52.37051519999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d4300b56acdbb3%3A0x294429a33e6db065!2z0YPQuy4g0J3QsNCx0LXRgNC10LbQvdCw0Y8gNDAsINCg0LXRh9C40YbQsCwg0JPQvtC80LXQu9GM0YHQutCw0Y8g0L7QsdC70LDRgdGC0Yw!5e1!3m2!1sru!2sby!4v1710341353308!5m2!1sru!2sby"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <div id="modal">
+        <form action="/submit-application" method="post">
+            Зарегистрируйтесь либо авторизуйтесь для заказа
+        </form>
+    </div>
+    <div class="form-popup" id="myForm">
+        <form class="form-container" action="/auth" method="post">
+            <h1>Регистрация</h1>
+            <label for="username"><b>Имя</b></label>
+            <input type="text" placeholder="Введите ваше имя" name="username" required>
+
+            <label for="email"><b>Электронная почта</b></label>
+            <input type="text" placeholder="Введите электронную почту" name="email" required>
+
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" required>
+            <input type="hidden" name="action" value="register"> <!-- Для регистрации -->
+            <button type="submit" class="btn">Войти</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+        </form>
+    </div>
+    <div class="form-popup" id="myForm2">
+        <form class="form-container" action="/auth" method="post">
+            <h1>Авторизация</h1>
+            <label for="username"><b>Имя</b></label>
+            <input type="text" placeholder="Введите ваше имя" name="username" required>
+
+            <label for="email"><b>Электронная почта</b></label>
+            <input type="text" placeholder="Введите электронную почту" name="email" required>
+
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" required>
+            <input type="hidden" name="action" value="login"> <!-- Для аутентификации -->
+            <button type="submit" class="btn">Войти</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">Закрыть</button>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../server.js"></script>
+    <script src="./js/client.js"></script>
+    <script src="./js/jquery.fancybox.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/avtor_reg.js"></script>
+</body>
+
+</html>
